@@ -17,4 +17,4 @@ Post.create!(content: "おはよう", user_id: user2.id)
 Post.create!(content: "こんにちは", user_id: user3.id)
 Post.create!(content: 'こんばんは', user_id: user3.id)
 
-puts "初期データの投入に成功しました！"
+puts "初期データの投入に成功しました。"
