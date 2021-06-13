@@ -21,4 +21,6 @@ user3.posts.create!(content: "ゴーヤチャンプルー")
 user3.posts.create!(content: "サーターアンダギー")
 user1.posts.create!(content: "タコライス")
 
-puts "初期データの投入に成功しました。"
+User.create!(email: email, password: password)
+
+puts "初期データの投入に成功しました。"git
