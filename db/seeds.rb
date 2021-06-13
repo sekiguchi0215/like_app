@@ -6,15 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+email = "test@example.com"
+password = "password"
+
 ActiveRecord::Base.connection.execute("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
-ActiveRecord::Base.connection.execute("TRUNCATE TABLE posts RESTART IDENTITY CASCADE")
 
 user1 = User.create!(email: "satou@example.com", password: "password")
 user2 = User.create!(email: "suzuki@example.com", password: "password")
 user3 = User.create!(email: "tanaka@example.com", password: "password")
 
-Post.create!(content: "おはよう", user_id: user2.id)
-Post.create!(content: "こんにちは", user_id: user3.id)
-Post.create!(content: 'こんばんは', user_id: user3.id)
+user2.posts.create!(content: "沖縄そば")
+user1.posts.create!(content: "海ぶどう")
+user3.posts.create!(content: "ゴーヤチャンプルー")
+user3.posts.create!(content: "サーターアンダギー")
+user1.posts.create!(content: "タコライス")
 
 puts "初期データの投入に成功しました。"
