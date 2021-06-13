@@ -23,4 +23,4 @@ user1.posts.create!(content: "タコライス")
 
 User.create!(email: email, password: password)
 
-puts "初期データの投入に成功しました。"git
+puts "初期データの投入に成功しました。"
