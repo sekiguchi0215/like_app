@@ -1,4 +1,6 @@
 <div>
-  <p><%= user.email %></p>
+  <p>
+    <%= link_to "#{user.email}", user %>
+  </p>
   <p><%= render "relationships/follow", user: @user %></p>
 </div>

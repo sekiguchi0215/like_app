@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  
   devise_for :users, controllers: {
     registrations: "users/registrations",
     passwords: "users/passwords"
@@ -13,4 +13,9 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :users, only: [:index, :show] do
+    member do
+      get :following, :followers
+    end
+  end
 end
